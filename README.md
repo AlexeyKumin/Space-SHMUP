@@ -1,2 +1,3 @@
-# Space-SHMUP
-Space SHMUP Plus
+# Space-SHMUP-Plus
+
+Space SHMUP Plus repository

@@ -112,6 +112,7 @@ public class Weapon : MonoBehaviour
         go.transform.position = collar.transform.position;
         go.transform.SetParent(PROJECTILE_ANCHOR, true);
         Projectile p = go.GetComponent<Projectile>();
+        p.type = type;
         lastShotTime = Time.time;
         return (p);
     }

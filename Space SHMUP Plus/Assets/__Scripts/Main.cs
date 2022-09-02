@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Main : MonoBehaviour
 {
     static public Main S;
-    static Dictionary<WeaponType, WeaponDefinition> WEAP_DICT;
+    static Dictionary<WeaponType, WeaponDefinition> WEAP_DICT; //protected
     [Header("Set in Inspector")]
     public GameObject[] prefabEnemies;
     public float enemySpawnPerSecond = 0.5f;
@@ -52,6 +52,23 @@ public class Main : MonoBehaviour
     public void Restart() {
         SceneManager.LoadScene("Scene_0");
     }
+
+/// <summary>
+/// Статическая функция, возвращающая WeaponDefinition из статического
+/// защищенного поля WEAP_DICT класса Main.
+/// </summary>
+/// < ret urns Экземпляр WeaponDefinition или, если нет такого определения
+/// для указанного WeaponType, возвращает новый экземпляр WeaponDefinition
+/// с типом none.</returns>
+/// <param name="wt">Tnn оружия WeaponType, для которого требуется получить
+/// WeaponDefinition</param>
+    static public WeaponDefinition GetWeaponDefinition(WeaponType wt) {
+        if (WEAP_DICT.ContainsKey(wt)) {
+            return(WEAP_DICT[wt]);
+        }
+        return (new WeaponDefinition());
+    }
+
     // Start is called before the first frame update
     void Start()
     {

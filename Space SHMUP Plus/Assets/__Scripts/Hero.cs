@@ -28,7 +28,7 @@ public class Hero : MonoBehaviour
         } else {
             Debug.LogError("Hero.Awake() - Attempted to assign second Hero.S!");
         }
-        fireDelegate += TempFire;
+        //fireDelegate += TempFire;
     }
 
     // Start is called before the first frame update
